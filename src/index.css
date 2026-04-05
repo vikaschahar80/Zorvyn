@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-main: #0B0A0F;
+  --color-card: #15141A;
+  --color-card-hover: #1A1921;
+  --color-border: #272630;
+
+  --color-text-primary: #F3F3F5;
+  --color-text-secondary: #9B9A9F;
+  --color-text-muted: #6B6A70;
+
+  --color-accent-primary: #6366F1;
+  --color-accent-secondary: #8B5CF6;
+  --color-accent-glow: rgba(99, 102, 241, 0.2);
+
+  --color-status-income: #10B981;
+  --color-status-income-bg: rgba(16, 185, 129, 0.1);
+  --color-status-expense: #F43F5E;
+  --color-status-expense-bg: rgba(244, 63, 94, 0.1);
+  --color-status-neutral: #3B82F6;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+
+  --shadow-glow: 0 0 20px var(--color-accent-glow);
+}
+
+[data-theme="light"] {
+  --color-main: #F9FAFB;
+  --color-card: #FFFFFF;
+  --color-card-hover: #F3F4F6;
+  --color-border: #E5E7EB;
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #6B7280;
+
+  --color-accent-primary: #4F46E5;
+  --color-accent-secondary: #7C3AED;
+  --color-accent-glow: rgba(79, 70, 229, 0.2);
+
+  --color-status-income: #059669;
+  --color-status-income-bg: rgba(5, 150, 105, 0.1);
+  --color-status-expense: #E11D48;
+  --color-status-expense-bg: rgba(225, 29, 72, 0.1);
+  --color-status-neutral: #2563EB;
+
+  --shadow-glow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-main);
+    color: var(--color-text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Some custom component classes can be used if they combine many utilities, 
+     but we will use utility classes directly in the components mostly. */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-main); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border); 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted); 
+}
