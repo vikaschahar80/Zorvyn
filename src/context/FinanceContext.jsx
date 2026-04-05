@@ -30,7 +30,6 @@ export const FinanceProvider = ({ children }) => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   };
 
-  // Initial Fetch
   const fetchTransactions = async () => {
     setIsLoading(true);
     try {
@@ -47,7 +46,6 @@ export const FinanceProvider = ({ children }) => {
     fetchTransactions();
   }, []);
 
-  // Actions
   const addTransaction = async (transaction) => {
     try {
       const newTx = await api.createTransaction(transaction);
@@ -66,7 +64,6 @@ export const FinanceProvider = ({ children }) => {
     }
   };
 
-  // Derived State (Insights & Calculations)
   const stats = useMemo(() => {
     let income = 0;
     let expense = 0;

@@ -13,7 +13,6 @@ const Transactions = () => {
   const [sortBy, setSortBy] = useState('date-desc');
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Filter & Search Logic
   const filteredTransactions = useMemo(() => {
     let result = transactions.filter(t => {
       const matchesSearch = t.description.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -22,7 +21,6 @@ const Transactions = () => {
       return matchesSearch && matchesType;
     });
 
-    // Sort Logic
     result.sort((a, b) => {
       if (sortBy === 'date-desc') {
         return new Date(b.date) - new Date(a.date);

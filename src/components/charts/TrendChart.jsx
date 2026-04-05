@@ -3,10 +3,8 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { format, parseISO } from 'date-fns';
 
 const TrendChart = ({ data }) => {
-  // Sort data by date ascending
   const sortedData = [...data].sort((a, b) => new Date(a.date) - new Date(b.date));
 
-  // Process data to calculate cumulative balance over time
   let currentBalance = 0;
   const processedData = sortedData.map(t => {
     if (t.type === 'income') {

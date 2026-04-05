@@ -1,7 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { subDays } from 'date-fns';
 
-// Helper to simulate network latency
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 const generateMockData = () => {
@@ -35,7 +34,7 @@ const persistData = (data) => {
 
 export const api = {
   getTransactions: async () => {
-    await delay(600); // simulate 600ms network delay
+    await delay(600);
     return getPersistedData();
   },
   

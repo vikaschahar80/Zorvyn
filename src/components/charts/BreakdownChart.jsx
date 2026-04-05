@@ -4,7 +4,6 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recha
 const COLORS = ['#6366F1', '#EC4899', '#10B981', '#F59E0B', '#3B82F6', '#8B5CF6'];
 
 const BreakdownChart = ({ data }) => {
-  // Extract category totals from data
   const chartData = Object.entries(data).map(([name, value]) => ({
     name,
     value
